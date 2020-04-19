@@ -24,17 +24,3 @@ def piratetrans(text):
     print(json_data['contents']['translated'])
     
 piratetrans('hello sir')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
