@@ -6,16 +6,13 @@ Created on Wed Apr 22 13:33:05 2020
 """
 
 
-from bs4 import UnicodeDammit
+# %20 space in percent encoding
 
-f = open('cb5.txt','rb')
-c = f.read()
-decoding = UnicodeDammit(c)
-encoding = decoding.original_encoding
+import urllib.parse 
 
-c = c.decode(encoding) 
-f.close()
-print('Some Chinese:', c)
+text = 'Cześć, mam na imię Michał!'
+encoded = urllib.parse.quote(text)
+print(encoded)
 
 
 
