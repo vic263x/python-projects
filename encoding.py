@@ -5,16 +5,15 @@ Created on Wed Apr 22 13:33:05 2020
 @author: Wiktoria
 """
 
-f = open('r1251.txt','rb')
-r = f.read()
-r = r.decode('1251') # windows - 1251 encoding
-f.close()
-print('Some Russian:', r)
 
+from bs4 import UnicodeDammit
 
 f = open('cb5.txt','rb')
 c = f.read()
-c = c.decode('big5') # big5 encoding
+decoding = UnicodeDammit(c)
+encoding = decoding.original_encoding
+
+c = c.decode(encoding) 
 f.close()
 print('Some Chinese:', c)
 
