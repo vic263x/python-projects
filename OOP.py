@@ -7,16 +7,18 @@ Created on Wed May  6 15:06:02 2020
 
 #a class definition
 class Word: 
-    def whatami():
-        return "I'm a word"
+    def whatami(self):
+        self.x = "I'm a noun"
 
 # an instance
 w = Word()
 w2 = Word()
 
-print(Word.whatami())
+w.whatami()
+print(w.x)
 
-print(w.whatami())
+w2.whatami()
+print(w2.x)
 
 
 
