@@ -5,32 +5,29 @@ Created on Wed May  6 15:06:02 2020
 @author: Wiktoria
 """
 
-#a class definition
-class Word: 
-    
-    count = 0
-    
-    def __init__(self, definition, entry):
-        self.definition = definition
-        self.entry = entry
-        Word.count +=1
-        print("Instantiating Word object")
-    
-    
-    def whatami(self):
-        self.x = "I'm a noun"
 
+class Segment:
+    def __init__(self, grapheme):
+        self.grapheme = grapheme
+        
+class Consonant(Segment):
     
-    def getDefinitionUppercased(self):
-        return self.definition.upper()
-# an instance
-w = Word("An animal with four legs", "Dog")
-w2 = Word("A vehicle can fly", "Airplane")
+    def moa(self):
+        return "palatal"
+        
+class Vowel(Segment):
 
-print(w.getDefinitionUppercased())
+    def height(self):
+        return "low"
+    
+con = Consonant("t")
 
-print(w2.entry)
-print(Word.count)
+vow = Vowel("o")
+
+print(con.grapheme)
+print(con.moa())
+print(vow.grapheme)
+print(vow.height())
 
 
 
