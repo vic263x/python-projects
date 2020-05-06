@@ -10,24 +10,24 @@ class Segment:
     def __init__(self, grapheme):
         self.grapheme = grapheme
         
-class Consonant(Segment):
+class Plosive(Segment):
     
-    def moa(self):
-        return "palatal"
+    def voicing(self):
+        return "voiceless"
         
-class Vowel(Segment):
+class Fricative(Segment):
 
-    def height(self):
-        return "low"
+    def poa(self):
+        return "dental"
     
-con = Consonant("t")
+plo = Plosive("k")
 
-vow = Vowel("o")
+fri = Fricative("th")
 
-print(con.grapheme)
-print(con.moa())
-print(vow.grapheme)
-print(vow.height())
+print(plo.grapheme)
+print(plo.voicing())
+print(fri.grapheme)
+print(fri.poa())
 
 
 
