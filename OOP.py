@@ -5,35 +5,32 @@ Created on Wed May  6 15:06:02 2020
 @author: Wiktoria
 """
 
+#a class definition
+class Word: 
+    
+    count = 0
+    
+    def __init__(self, definition, entry):
+        self.definition = definition
+        self.entry = entry
+        Word.count +=1
+        print("Instantiating Word object")
+    
+    
+    def whatami(self):
+        self.x = "I'm a noun"
 
-class Phrase: 
     
-    
-    
-    def sentence(self):
-        self.a = "A new sentence"
-        
-    def setDefinition(self, a):
-        self.definition = a
-        
-        
     def getDefinitionUppercased(self):
         return self.definition.upper()
-    
-p1 = Phrase()
-p2 = Phrase()
+# an instance
+w = Word("An animal with four legs", "Dog")
+w2 = Word("A vehicle can fly", "Airplane")
 
-p1.setDefinition("A different sentence")
-print(p1.definition)
+print(w.getDefinitionUppercased())
 
-print(p1.getDefinitionUppercased())
-
-p2.setDefinition("Sentence number two")
-print(p2.definition)
-
-print(p2.getDefinitionUppercased())
-    
-
+print(w2.entry)
+print(Word.count)
 
 
 
