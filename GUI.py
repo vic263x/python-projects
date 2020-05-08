@@ -5,31 +5,25 @@ Created on Fri May  8 12:24:23 2020
 @author: Wiktoria
 """
 
-from tkinter import Tk, Frame, Button, LEFT, mainloop
-
-
-#start a tkinter window app
+from tkinter import Tk, Label, Button, mainloop
 
 root = Tk()
 
-#make a frame widget 
+count = 0
 
-frame = Frame(root)
-frame.pack() #positioning the element on the screen
+label = Label(root, text = "Button clicked: " + str(count),
+              padx = 30, pady = 30)
+label.pack()
 
-
-# make a button
-
-button = Button(frame, padx = 20, pady = 10,
-                text = 'quit', command = quit)
-
-button.pack(side = LEFT, padx = 5, pady = 3)
-
-#wait for something to happen
+def increment():
+    global count
+    count += 1
+    label.configure(text = "Button clicked: " + str(count))
+    
+button = Button(root, text = "Wow", command = increment)
+button.pack()
 
 mainloop()
-
-
 
 
 
