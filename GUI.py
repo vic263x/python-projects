@@ -5,23 +5,22 @@ Created on Fri May  8 12:24:23 2020
 @author: Wiktoria
 """
 
-from tkinter import Tk, Label, Button, mainloop
+from tkinter import Tk, Button, Label, filedialog, mainloop 
 
 root = Tk()
 
-count = 0
+file_label = Label(root, text = "File location...")
+file_label.pack()
 
-label = Label(root, text = "Button clicked: " + str(count),
-              padx = 30, pady = 30)
-label.pack()
+def get_file():
+    file_path = filedialog.askopenfilename()
+    file_label.configure(text = file_path)
 
-def increment():
-    global count
-    count += 1
-    label.configure(text = "Button clicked: " + str(count))
-    
-button = Button(root, text = "Wow", command = increment)
-button.pack()
+file_button = Button(root, text = "get file location", command = get_file)
+file_button.pack()
+
+quit_button = Button(root, text = "Quit", command = quit)
+quit_button.pack()
 
 mainloop()
 
