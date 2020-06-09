@@ -15,7 +15,7 @@ file_label = Label(root, textvariable = file_path)
 file_label.pack()
 
 def get_file():
-      file_path.set(filedialog.askopenfilename())
+      file_path.set(filedialog.askopenfilename()) 
    
 
 file_button = Button(root, text = "get file location", command = get_file)
