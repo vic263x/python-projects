@@ -5,37 +5,21 @@ Created on Wed Jun 10 13:30:13 2020
 @author: Wiktoria
 """
 
-from tkinter import Tk, Menu, mainloop
+from tkinter import Tk, mainloop, Listbox, Button, END, MULTIPLE
 
-
-def newfile():
-    pass
-
-def openfile():
-    pass
-
-def savefile():
-    pass
-
-def closefile():
-    pass
+def getitem():
+    print('Element(s) selected: ', mylist.curselection())
 
 root = Tk()
-menubar = Menu(root)
-filemenu = Menu(menubar)
-filemenu.add_command(label = 'New', command = newfile)
-filemenu.add_command(label = 'Open', command = openfile)
-filemenu.add_command(label = 'Save as...', command = savefile)
-filemenu.add_command(label = 'Close', command = closefile)
-filemenu.add_separator
-filemenu.add_command(label = 'Exit', command = root.quit)
 
+mylist = Listbox(root, selectmode = MULTIPLE)
 
-menubar.add_cascade(label = 'File', menu = filemenu)
+for line in range(5):
+    mylist.insert(END, 'This is line number ' + str(line))
+mylist.pack()
 
-root.config(menu = menubar)
-
+button = Button(text = 'Confirm', command = getitem)
+button.pack()
 
 
 mainloop()
-
